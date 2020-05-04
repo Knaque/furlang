@@ -3,9 +3,15 @@
 # liscensed under the CC0 1.0 Universal license
 
 
-# Import necessary modules
+# stdlib
 import os, strutils, tables
+# files
+import tokenizer
 
+# some procs
+proc add(a: openArray[string]): int =
+  for n in a:
+    result += n.parseInt()
 
 # Load code from file, print help message if not specified
 let program = open(
@@ -27,7 +33,9 @@ var vars = initTable[string, string]()
 
 # iter through each line in the program
 for line in program.lines():
-  discard # do the thing
-
+  let cmd = tokenize(line)
+  case cmd[0]
+  of "awoo": echo cmd[1..cmd.len-1].join()
+  of "hug": echo add(cmd[1..cmd.len-1])
 
 program.close()

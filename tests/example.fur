@@ -1,0 +1,7 @@
+awoo("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()`~-_=+[]\{}|;':,./<>?")
+awoo("split", "string")
+awoo("lots", "of", "splits")
+hug(1, 2)
+hug(1, 2, 3)
+awoo("\"can I have quotes in my string?\"")
+awoo("What about \\ backslahes?")
